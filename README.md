@@ -70,3 +70,13 @@ Additionally, you may find a _MANIFEST.in_ file. This file is used configure add
 Once your project is ready, it can be published to an index. The public index for Python is PyPI. In some production environments, companies use private package indexes where packages are hosted for internal use only.
 
 For publishing, you will need the packaging files, and the [twine package](https://twine.readthedocs.io/en/stable/) and your credentials for PyPI. Make sure you [create an account](https://pypi.org/account/register/).
+
+## CI/CD with Github Actions
+
+Finally, you should have a fully functional command line tool that you will probably want to install in other places and share it with others. Knowing how to publish and package your tool is already useful but you can take things a step further by fully automating the publishing.
+
+A CI/CD (Continuous Integration and Continuous Deployment) setup helps you avoid mistakes, conditionalizes your release after quality control rules are passing (like linting and tests), and it reasures you that a release meets all required verification steps.
+
+When there is no automation involved then it is easy to forget about a step, or get into errors from doing things out of order.
+
+There are many different CI/CD systems that allow you to automate linting, testing, and releasing, but for this project, you'll take advantage of Github Actions. All you need to do is to create a hidden directory (`.github/`) at the top of your project with a sub-directory called `workflows` and a single YAML file. The YAML file holds the instructions for your project to test, verify, and create the release.
