@@ -71,6 +71,10 @@ Once your project is ready, it can be published to an index. The public index fo
 
 For publishing, you will need the packaging files, and the [twine package](https://twine.readthedocs.io/en/stable/) and your credentials for PyPI. Make sure you [create an account](https://pypi.org/account/register/).
 
+After registering, go to [manage your account](https://pypi.org/manage/account/) and search for the _API tokens_ section. Select the _"Add API token"_ button, complete the name and select "Entire account" for the scope. Since you haven't uploaded the project, you will need that scope even though the warning tells you to proceed with caution.
+
+After creating the token, copy it and go back to your Github project. You need to create a secret with the token. Go to the Settings menu of your GitHub repository and look for the Secrets item. Select Actions and then New repositoy secret. The secret name must be `PYPI_API_TOKEN`. Paste the token in the value section and select the green button to add the secret.
+
 ## CI/CD with Github Actions
 
 Finally, you should have a fully functional command line tool that you will probably want to install in other places and share it with others. Knowing how to publish and package your tool is already useful but you can take things a step further by fully automating the publishing.
