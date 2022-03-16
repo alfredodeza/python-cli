@@ -84,3 +84,19 @@ A CI/CD (Continuous Integration and Continuous Deployment) setup helps you avoid
 When there is no automation involved then it is easy to forget about a step, or get into errors from doing things out of order.
 
 There are many different CI/CD systems that allow you to automate linting, testing, and releasing, but for this project, you'll take advantage of Github Actions. All you need to do is to create a hidden directory (`.github/`) at the top of your project with a sub-directory called `workflows` and a single YAML file. The YAML file holds the instructions for your project to test, verify, and create the release.
+
+### Automatic release
+
+Releases on Github are tied to tags. Tagging is a Git operation that marks a point in time of a repository. In this case, we have a version that exists in a package (for example `0.0.1`) and a tag that needs to happen to cut a release. Ideally, you would want to have both happen in a correlated way.
+
+When you don't correlate both, you can end up with a tag for `0.0.2` but a version of `0.0.1`. That would cause confusion for anyone trying to install a specific version.
+
+Create a tag with git:
+
+```bash
+$ git tag '0.0.1'
+$ git push --tags
+```
+
+In Github, a tag is not automatically associated with a release. So after tagging, you must go through the web interface and create a release. Do that by going to your project, then to the tag menu just above your code. Next, use _Releases_ to create a new release based on the tag you've previously pushed.
+
