@@ -1,6 +1,8 @@
 # python-cli
 Build a Python command line tool from scratch
 
+This is part of [Scripting Withh Python and SQL](https://www.coursera.org/learn/scripting-with-python-sql-for-data-engineering-duke) Coursera course.
+
 ## Why a command-line tool
 
 The basis of becoming a better engineer starts with automation. Automate everything. Get into the habit of continuously automating everything that seems like it could be automated. A command line tool will give you the stepping stone for creating automation. It will allow you to avoid repetitive (and error-prone) tasks, while making you more prolific since a tool will do a task much faster.
